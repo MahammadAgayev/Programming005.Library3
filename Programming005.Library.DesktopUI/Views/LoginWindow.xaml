@@ -42,7 +42,7 @@
                 <Separator BorderBrush="#60444444" Margin="10"/>
 
                 <TextBlock Text="İstifadəçi adı və ya şifrə yanlışdır" Background="#FF24253A"    FontFamily="Times New Roman" FontSize="24" 
-                           Foreground="Red" Margin="10,0,0,10"  Visibility="{Binding ErrorVisibility}"/>
+                           Foreground="Red" Margin="10,0,0,10"  />
 
 
                 <Border VerticalAlignment="Stretch" BorderThickness="5" CornerRadius="10" BorderBrush="#FF333337" Height="auto" Width="150">
