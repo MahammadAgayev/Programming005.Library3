@@ -10,7 +10,7 @@ namespace Programming005.Library.Core.Domain.Entities
         public string Language { get; set; }
         public bool IsTranslation { get; set; }
 
-        public List<Author> Authors { get; set; }
-        public List<Branch> Branches { get; set; }
+        public List<Programming005.Library.Core.Domain.Entities.Author> Authors { get; set; }
+        public List<Programming005.Library.Core.Domain.Entities.Branch> Branches { get; set; }
     }
 }

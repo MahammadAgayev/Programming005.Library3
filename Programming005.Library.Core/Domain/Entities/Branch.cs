@@ -8,7 +8,7 @@ namespace Programming005.Library.Core.Domain.Entities
         public string Name { get; set; }
         public string Address { get; set; }
 
-        public List<User> Users { get; set; }
-        public List<Book> Books { get; set; }
+        public List<Programming005.Library.Core.Domain.Entities.User> Users { get; set; }
+        public List<Programming005.Library.Core.Domain.Entities.Book> Books { get; set; }
     }
 }

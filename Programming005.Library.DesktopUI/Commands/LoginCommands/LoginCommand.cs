@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Programming005.Library.DesktopUI.ViewModel;
 using System.Windows.Controls;
+using Programming005.Library.DesktopUI.Views;
 
 namespace Programming005.Library.DesktopUI.Commands.LoginCommands
 {
@@ -36,9 +37,11 @@ namespace Programming005.Library.DesktopUI.Commands.LoginCommands
 
             if (inputPassword == password && inputUsername == username)
             {
-                //logined
-            }
+                BranchesWindow window = new BranchesWindow();
+                window.DataContext = new BranchViewModel();
 
+                window.Show();
+            }
         }
     }
 }

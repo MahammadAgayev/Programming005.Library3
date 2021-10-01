@@ -47,7 +47,7 @@ namespace Programming005.Library.Core.DataAccess.Sql
             }
         }
 
-        public List<Branch> Get()
+        public List<Programming005.Library.Core.Domain.Entities.Branch> Get()
         {
             using (var con =  new SqlConnection(_connectionString))
             {
@@ -58,7 +58,7 @@ namespace Programming005.Library.Core.DataAccess.Sql
 
                 var reader = cmd.ExecuteReader();
 
-                var branches = new List<Branch>();
+                var branches = new List<Programming005.Library.Core.Domain.Entities.Branch>();
 
                 while(reader.Read())
                 {

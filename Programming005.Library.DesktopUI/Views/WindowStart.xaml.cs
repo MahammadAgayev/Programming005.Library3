@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Programming005.Library.Core;
+using Programming005.Library.Core.Factories;
 using Programming005.Library.DesktopUI.Utils;
 using Programming005.Library.DesktopUI.ViewModel;
 
@@ -53,6 +55,12 @@ namespace Programming005.Library.DesktopUI.Views
 
                 if (CheckSqlConnection(builder.ConnectionString))
                 {
+                    Kernel.DB = DbFactory.GetDb(new DbSettings
+                    {
+                        ConnectionString = builder.ConnectionString,
+                        DbType = currentConfig.DbType
+                    });
+
                     LoginWindow window = new LoginWindow();
                     window.DataContext = new LoginViewModel();
                     window.Show();

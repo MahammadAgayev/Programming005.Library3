@@ -13,7 +13,7 @@ namespace Programming005.Library.Core.Factories
                 case "sql":
                     return new SqlUnitOfWork(settings.ConnectionString);
                 default:
-                    throw new NotSupportedException($"dbtype '{settings.DbType}' not supported");
+                    return new SqlUnitOfWork(settings.ConnectionString);
             }
         }
     }

@@ -8,6 +8,6 @@ namespace Programming005.Library.Core.Domain.Entities
         public string Name { get; set; }
         public string Surname { get; set; }
 
-        public List<Book> Books { get; set; }
+        public List<Programming005.Library.Core.Domain.Entities.Book> Books { get; set; }
     }
 }

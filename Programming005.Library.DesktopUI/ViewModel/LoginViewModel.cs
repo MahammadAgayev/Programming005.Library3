@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Programming005.Library.DesktopUI.Models.LoginModels;
+﻿using System.Windows.Input;
 using Programming005.Library.DesktopUI.Commands.LoginCommands;
+using Programming005.Library.DesktopUI.Models.LoginModels;
 
 namespace Programming005.Library.DesktopUI.ViewModel
 {
@@ -14,7 +9,10 @@ namespace Programming005.Library.DesktopUI.ViewModel
         public LoginViewModel()
         {
             Login = new LoginCommand(this);
-            LoginModel = new LoginModel();
+            LoginModel = new LoginModel
+            {
+                Username = "test"
+            };
         }
 
         public ICommand Login { get; set; }
