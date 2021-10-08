@@ -15,7 +15,8 @@
             
 
             <StackPanel  Grid.Row="0" Height="120">
-                <TextBlock Text="Kitabxana sistemi" FontSize="60" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Italic" FontFamily="Times new roman" Margin="10 15 10 10"/>
+                <TextBlock Text="Kitabxana sistemi" FontSize="60" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" 
+                           FontStyle="Italic" FontFamily="Times new roman" Margin="10 0 10 10"/>
                 <ProgressBar  x:Name="progressBar" Background="Green" Foreground="DarkGoldenrod"  IsIndeterminate="True"  Height="10" Margin="10 15 10 0"/>
                 <Line Stretch="Fill" Stroke="Black" X2="1" VerticalAlignment="Bottom"/>
             </StackPanel>
@@ -44,18 +45,29 @@
                 </Grid>
                 <Border  Grid.Row="1" >
                     <StackPanel Grid.Row="1" Grid.Column="1">
-                        <ScrollViewer Grid.Row="2" Visibility="Visible">
-                            <ListView x:Name="MainList" ItemsSource="{Binding Branches}"
+                            <ListView x:Name="MainList"
+                                      ItemsSource="{Binding Branches}"
+                                      SelectedItem="{Binding SelectedModel}"
                         Style="{StaticResource listViewCustom}">
                                 <ListView.View>
                                     <GridView >
-                                        <GridViewColumn  DisplayMemberBinding="{Binding Id}"  Header="No" Width="200"/>
-                                        <GridViewColumn  DisplayMemberBinding="{Binding Name}" Header="Ad" Width="200"/>
-                                        <GridViewColumn  DisplayMemberBinding="{Binding Address}" Header="Addres" Width="200"/>
+                                        <GridViewColumn  DisplayMemberBinding="{Binding Id}"  Header="No" Width="150"/>
+                                    <GridViewColumn  DisplayMemberBinding="{Binding Name}" Header="Ad" Width="150"/>
+                                    <GridViewColumn  DisplayMemberBinding="{Binding Address}" Header="Addres" Width="150"/>
                                     </GridView>
                                 </ListView.View>
                             </ListView>
-                        </ScrollViewer>
+
+                        <Border Margin="10" Width="60" Height="20" 
+                                HorizontalAlignment="Right" >
+                            <Button Command="{Binding AddBranch}" Style="{StaticResource btnAdd}">
+                            </Button>
+                        </Border>
+                        <Border Margin="10" Width="60" Height="20" 
+                                HorizontalAlignment="Right" >
+                            <Button Command="{Binding DeleteBranch}" Style="{StaticResource btnDelete}">
+                            </Button>
+                        </Border>
                     </StackPanel>
                 </Border>
             </DockPanel>

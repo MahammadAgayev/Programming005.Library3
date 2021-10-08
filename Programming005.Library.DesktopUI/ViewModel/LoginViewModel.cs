@@ -1,17 +1,18 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
 using Programming005.Library.DesktopUI.Commands.LoginCommands;
 using Programming005.Library.DesktopUI.Models.LoginModels;
 
 namespace Programming005.Library.DesktopUI.ViewModel
 {
-    public class LoginViewModel
+    public class LoginViewModel : BaseWindowViewModel
     {
-        public LoginViewModel()
+        public LoginViewModel(Window window) : base(window)
         {
             Login = new LoginCommand(this);
             LoginModel = new LoginModel
             {
-                Username = "test"
+                Username = "admin"
             };
         }
 

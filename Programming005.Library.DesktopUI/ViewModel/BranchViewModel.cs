@@ -1,16 +1,20 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Input;
 using Programming005.Library.Core;
+using Programming005.Library.DesktopUI.Commands.BranchCommands;
 using Programming005.Library.DesktopUI.Models.BranchModels;
 
 namespace Programming005.Library.DesktopUI.ViewModel
 {
-    public class BranchViewModel
+    public class BranchViewModel : BaseWindowViewModel
     {
-        public BranchViewModel()
+        public BranchViewModel(Window window) : base(window)
         {
             var branches = Kernel.DB.BranchRepository.Get();
 
-            Branches = new List<BranchModel>();
+            Branches = new ObservableCollection<BranchModel>();
 
             foreach (var branch in branches)
             {
@@ -21,8 +25,16 @@ namespace Programming005.Library.DesktopUI.ViewModel
                     Address = branch.Address
                 });
             }
+
+            AddBranch = new OpenAddBranchViewCommand(this);
+            DeleteBranch = new DeleteBranchCommand(this);
         }
 
-        public List<BranchModel> Branches { get; set; }
+        public ICommand AddBranch { get; set; }
+        public ICommand DeleteBranch { get; set; }
+
+        public ObservableCollection<BranchModel> Branches { get; set; }
+
+        public BranchModel SelectedModel { get; set; }
     }
 }

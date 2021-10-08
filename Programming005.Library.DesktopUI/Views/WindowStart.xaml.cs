@@ -62,7 +62,7 @@ namespace Programming005.Library.DesktopUI.Views
                     });
 
                     LoginWindow window = new LoginWindow();
-                    window.DataContext = new LoginViewModel();
+                    window.DataContext = new LoginViewModel(window);
                     window.Show();
                     this.Close();
                 }

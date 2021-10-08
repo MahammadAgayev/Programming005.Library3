@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using Programming005.Library.Core.Domain.Abstract;
 using Programming005.Library.Core.Domain.Entities;
@@ -22,13 +23,13 @@ namespace Programming005.Library.Core.DataAccess.Sql
             {
                 con.Open();
 
-                string query = "insert into branches values(@name, @address)";
+                string query = "insert into branches output inserted.id values(@name, @address)";
                 var cmd = new SqlCommand(query, con);
 
                 cmd.Parameters.AddWithValue("name", branch.Name);
                 cmd.Parameters.AddWithValue("address", branch.Address);
 
-                cmd.ExecuteNonQuery();
+                branch.Id = Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
 
