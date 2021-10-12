@@ -48,7 +48,7 @@ namespace Programming005.Library.Core.DataAccess.Sql
             }
         }
 
-        public List<Programming005.Library.Core.Domain.Entities.Branch> Get()
+        public List<Branch> Get()
         {
             using (var con =  new SqlConnection(_connectionString))
             {
@@ -69,6 +69,29 @@ namespace Programming005.Library.Core.DataAccess.Sql
                 }
 
                 return branches;
+            }
+        }
+
+        public Branch Get(int id)
+        {
+            using(SqlConnection con = new SqlConnection(_connectionString))
+            {
+                con.Open();
+                string query = @"select * from Branches where id = @id";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                cmd.Parameters.AddWithValue("id", id);
+                var reader = cmd.ExecuteReader();
+
+                if(reader.Read())
+                {
+                    var entity = ReadFromReader(reader);
+                    return entity;
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
 

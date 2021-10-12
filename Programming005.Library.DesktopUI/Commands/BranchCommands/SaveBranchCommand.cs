@@ -25,6 +25,7 @@ namespace Programming005.Library.DesktopUI.Commands.BranchCommands
 
         public void Execute(object parameter)
         {
+            //add to database
             Branch branch = new Branch
             {
                 Name = _viewModel.AddBranchModel.Name,
@@ -33,13 +34,19 @@ namespace Programming005.Library.DesktopUI.Commands.BranchCommands
 
             Kernel.DB.BranchRepository.Add(branch);
 
-            _viewModel.BranchViewModel.Branches.Add(new BranchModel
+            //add to view
+            var branches = _viewModel.BranchViewModel.Branches;
+
+            var model = new BranchModel
             {
                 Name = branch.Name,
                 Address = branch.Address,
-                Id = branch.Id
-            });
+                Id = branch.Id,
+            };
 
+            model.No = branches.Count+1;
+
+            branches.Add(model);
             _viewModel.Window.Close();
         }
     }

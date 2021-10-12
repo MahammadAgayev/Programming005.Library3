@@ -10,13 +10,13 @@ namespace Programming005.Library.DesktopUI.ViewModel
         public AddBranchViewModel(Window window, BranchViewModel branchViewModel) : base(window)
         {
             SaveBranch = new SaveBranchCommand(this);
-            AddBranchModel = new AddBranchModel();
+            AddBranchModel = new BranchModel();
             BranchViewModel = branchViewModel;
         }
 
         public ICommand SaveBranch { get; set; }
 
-        public AddBranchModel AddBranchModel { get; set; } 
+        public BranchModel AddBranchModel { get; set; } 
 
         public BranchViewModel BranchViewModel { get; set; }
     }

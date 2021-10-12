@@ -1,11 +1,11 @@
-﻿<Window x:Class="Programming005.Library.DesktopUI.Views.AddBranchWindow"
+﻿<Window x:Class="Programming005.Library.DesktopUI.Views.EditBranchWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Programming005.Library.DesktopUI.Views"
         mc:Ignorable="d"
-        Title="AddBranchWindow" Height="400" Width="350" ResizeMode="NoResize">
+        Title="EditBranchWindow" Height="400" Width="350" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -21,18 +21,18 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Label Content="Filial:" Margin="10"></Label>
-            <TextBox Margin="10" Text="{Binding AddBranchModel.Name}"></TextBox>
-            
+            <TextBox Margin="10" Text="{Binding Model.Name}"></TextBox>
+
             <Label Margin="10" Content="Unvan:"></Label>
             <Border Margin="10" BorderThickness="0.5" BorderBrush="Black">
-                <TextBox Text="{Binding AddBranchModel.Address}" Height="80">
+                <TextBox Text="{Binding Model.Address}" Height="80">
 
                 </TextBox>
             </Border>
 
             <Border Margin="10" >
-                <Button Command="{Binding SaveBranch}" Style="{StaticResource btnAdd}">
-                    
+                <Button Command="{Binding EditBranch }" Style="{StaticResource btnChange}">
+
                 </Button>
             </Border>
         </StackPanel>

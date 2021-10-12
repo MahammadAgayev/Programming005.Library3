@@ -8,7 +8,8 @@ namespace Programming005.Library.Core.Domain.Abstract
         void Add(Branch branch);
         void Update(Branch branch);
 
-        List<Programming005.Library.Core.Domain.Entities.Branch> Get();
+        List<Branch> Get();
+        Branch Get(int id);
 
         void Delete(int id);
     }

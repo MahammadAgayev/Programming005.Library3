@@ -38,7 +38,10 @@ namespace Programming005.Library.DesktopUI.Commands.LoginCommands
             if (inputPassword == password && inputUsername == username)
             {
                 BranchesWindow window = new BranchesWindow();
-                window.DataContext = new BranchViewModel(window);
+                var viewModel = new BranchViewModel(window);
+                window.DataContext = viewModel;
+                window.GrdCenter.Children.Add(new BranchesUserControl());
+                viewModel.Grid = window.GrdCenter;
 
                 window.Show();
 
