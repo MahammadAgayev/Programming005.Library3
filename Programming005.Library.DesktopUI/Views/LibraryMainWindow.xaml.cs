@@ -17,9 +17,9 @@ namespace Programming005.Library.DesktopUI.Views
     /// <summary>
     /// Interaction logic for BranchesWindow.xaml
     /// </summary>
-    public partial class BranchesWindow : Window
+    public partial class LibraryMainWindow : Window
     {
-        public BranchesWindow()
+        public LibraryMainWindow()
         {
             InitializeComponent();
         }

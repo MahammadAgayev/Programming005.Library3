@@ -12,5 +12,7 @@ namespace Programming005.Library.Core.DataAccess.Sql
         }
 
         public IBranchRepository BranchRepository => new SqlBranchRepository(_connectionString);
+
+        public IBookRepository BookRepository => new SqlBookRepository(_connectionString);
     }
 }

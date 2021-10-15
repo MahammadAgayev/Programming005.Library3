@@ -9,9 +9,9 @@ using Programming005.Library.DesktopUI.Models.BranchModels;
 
 namespace Programming005.Library.DesktopUI.ViewModel
 {
-    public class BranchViewModel : BaseWindowViewModel
+    public class BranchViewModel : BaseUserControlViewModel
     {
-        public BranchViewModel(Window window) : base(window)
+        public BranchViewModel(UserControl control) : base(control)
         {
             var branches = Kernel.DB.BranchRepository.Get();
 
@@ -42,7 +42,5 @@ namespace Programming005.Library.DesktopUI.ViewModel
         public ObservableCollection<BranchModel> Branches { get; set; }
 
         public BranchModel SelectedModel { get; set; }
-
-        public Grid Grid { get; set; }
     }
 }

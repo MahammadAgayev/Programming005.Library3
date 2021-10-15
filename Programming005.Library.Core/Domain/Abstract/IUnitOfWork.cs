@@ -9,5 +9,6 @@ namespace Programming005.Library.Core.Domain.Abstract
     public interface IUnitOfWork
     {
         IBranchRepository BranchRepository { get; }
+        IBookRepository BookRepository { get; }
     }
 }

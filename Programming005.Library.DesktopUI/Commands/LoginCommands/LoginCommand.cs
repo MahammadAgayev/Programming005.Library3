@@ -37,14 +37,18 @@ namespace Programming005.Library.DesktopUI.Commands.LoginCommands
 
             if (inputPassword == password && inputUsername == username)
             {
-                BranchesWindow window = new BranchesWindow();
-                var viewModel = new BranchViewModel(window);
+                LibraryMainWindow window = new LibraryMainWindow();
+                var viewModel = new LibraryMainViewModel(window);
                 window.DataContext = viewModel;
-                window.GrdCenter.Children.Add(new BranchesUserControl());
+                //added user control to view
+                var userControl = new BranchesUserControl();
+                userControl.DataContext = new BranchViewModel(userControl);
+
+                window.GrdCenter.Children.Add(userControl);
+                //set current viewmodel grid to grid center
                 viewModel.Grid = window.GrdCenter;
 
                 window.Show();
-
                 _loginViewModel.Window.Close();
             }
         }
