@@ -10,9 +10,11 @@ namespace Programming005.Library.DesktopUI.ViewModel
         public LibraryMainViewModel(Window window) : base(window)
         {
             OpenBooks = new OpenBooksCommand(this);
+            OpenBranches = new OpenBranchesCommand(this);
         }
 
         public ICommand OpenBooks { get; set; }
+        public ICommand OpenBranches { get; set; }
 
         public Grid Grid { get; set; }
     }

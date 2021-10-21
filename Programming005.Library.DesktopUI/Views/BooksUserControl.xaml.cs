@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Programming005.Library.DesktopUI.Views
@@ -17,7 +18,7 @@ namespace Programming005.Library.DesktopUI.Views
     /// <summary>
     /// Interaction logic for BooksUserControl.xaml
     /// </summary>
-    public partial class BooksUserControl : Window
+    public partial class BooksUserControl : UserControl
     {
         public BooksUserControl()
         {

@@ -1,13 +1,13 @@
-﻿using Programming005.Library.Core;
+﻿using System.Collections.ObjectModel;
+using System.Windows.Controls;
+using Programming005.Library.Core;
 using Programming005.Library.DesktopUI.Models.BookModels;
-using System.Collections.ObjectModel;
-using System.Windows;
 
 namespace Programming005.Library.DesktopUI.ViewModel
 {
-    public class BookViewModel : BaseWindowViewModel
+    public class BookViewModel : BaseUserControlViewModel
     {
-        public BookViewModel(Window window) : base(window)
+        public BookViewModel(UserControl control) : base(control)
         {
             var entites = Kernel.DB.BookRepository.Get();
 
