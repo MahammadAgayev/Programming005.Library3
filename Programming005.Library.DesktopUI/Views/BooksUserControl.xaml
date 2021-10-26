@@ -39,6 +39,12 @@
                 <Button  Style="{StaticResource btnChange}">
                 </Button>
             </Border>
+
+            <Border Margin="10" Width="60" Height="20" 
+                                HorizontalAlignment="Right" >
+                <Button Command="{Binding ExportBooks}" Content="Eksport" Style="{StaticResource btnGreen}">
+                </Button>
+            </Border>
         </StackPanel>
     </Grid>
 

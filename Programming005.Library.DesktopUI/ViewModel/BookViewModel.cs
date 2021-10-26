@@ -1,6 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Programming005.Library.Core;
+using Programming005.Library.DesktopUI.Commands.BookCommands;
 using Programming005.Library.DesktopUI.Models.BookModels;
 
 namespace Programming005.Library.DesktopUI.ViewModel
@@ -26,10 +28,14 @@ namespace Programming005.Library.DesktopUI.ViewModel
                     No = counter++
                 });
             }
+
+            ExportBooks = new ExportBooksCommand(this);
         }
 
         public ObservableCollection<BookModel> Books { get; set; }
 
         public BookModel SelectedModel { get; set; }
+
+        public ICommand ExportBooks { get; set; }
     }
 }
